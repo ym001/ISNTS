@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calcul de l'IMC</title>
+</head>
+<body>
+<script>
+	
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','input1')
+	inputVariable.setAttribute('onchange','affiche()')
+	inputVariable.value='Taille'
+	document.body.appendChild(inputVariable) 
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','input2')
+	inputVariable.setAttribute('onchange','affiche()')
+	inputVariable.value='Masse'
+	document.body.appendChild(inputVariable) 
+	paragraphe = document.createElement('p')
+	paragraphe.setAttribute('id','paragraphe1')
+	texte = document.createTextNode('Calcul de votre IMC.')
+	paragraphe.appendChild(texte)
+	document.body.appendChild(paragraphe)
+function affiche(){
+	taille=document.getElementById('input1').value
+	masse=document.getElementById('input2').value
+	paragraphe=document.getElementById('paragraphe1')
+	paragraphe.removeChild( paragraphe.firstChild)
+	valeur = masse / ( taille * taille )
+	texte = document.createTextNode('Votre IMC : '+valeur)
+	paragraphe.appendChild(texte)
+	}
+
+</script>
+</body>
+</html>
