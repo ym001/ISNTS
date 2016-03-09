@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<script language="JavaScript">
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','inputa')
+	inputVariable.value='d1'
+	document.body.appendChild(inputVariable) 
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','inputb')
+	inputVariable.setAttribute('onchange','affiche()')
+	inputVariable.value='d2'
+	document.body.appendChild(inputVariable) 
+	paragraphe = document.createElement('p')
+	paragraphe.setAttribute('id','paragraphe1')
+	texte = document.createTextNode('Calcule de la force de gravitation.')
+	paragraphe.appendChild(texte)
+	document.body.appendChild(paragraphe)
+	
+function affiche(){
+	var d1=parseFloat(document.getElementById('inputa').value)
+	var d2=parseFloat(document.getElementById('inputb').value)
+	paragraphe=document.getElementById('paragraphe1')
+	paragraphe.removeChild( paragraphe.firstChild )
+	var d=d1
+	var somme=0
+	var str=''
+	while(d<d2){
+		var f=6.67*Math.pow(10,-11)*Math.pow(10,8)/Math.pow(d,2)
+		str=str+'F('+d+') = '+f.toPrecision(4)+' N ; '
+		d=d*2
+		}
+		
+	texte = document.createTextNode(str)
+	paragraphe.appendChild(texte)
+	}
+
+</script>
+
+</body>
+</html>

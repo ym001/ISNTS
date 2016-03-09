@@ -1,0 +1,42 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<script language="JavaScript">
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','input1')
+	inputVariable.setAttribute('onchange','affiche()')
+	inputVariable.value='a'
+	document.body.appendChild(inputVariable) 
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','input2')
+	inputVariable.setAttribute('onchange','affiche()')
+	inputVariable.value='b'
+	document.body.appendChild(inputVariable) 
+	paragraphe = document.createElement('p')
+	paragraphe.setAttribute('id','paragraphe1')
+	texte = document.createTextNode('Calcul fonction linéaire.')
+	paragraphe.appendChild(texte)
+	document.body.appendChild(paragraphe)
+	
+function affiche(){
+	var a=parseFloat(document.getElementById('input1').value)
+	var b=parseFloat(document.getElementById('input2').value)
+	paragraphe=document.getElementById('paragraphe1')
+	paragraphe.removeChild( paragraphe.firstChild )
+	var str=''
+	
+	for(var x=0;x<10;x++){
+		f=a*x+b
+		str+='f('+x+')='+f+' ; '
+		}
+		
+	texte = document.createTextNode(str)
+	paragraphe.appendChild(texte)
+	}
+
+</script>
+
+</body>
+</html>

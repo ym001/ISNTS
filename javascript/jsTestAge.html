@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<script language="JavaScript">
+	
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','inputNom')
+	inputVariable.setAttribute('onchange','afficheNom()')
+	inputVariable.value='nom'
+	
+	document.body.appendChild(inputVariable) 
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','inputAge')
+	inputVariable.setAttribute('onchange','afficheAge()')
+	inputVariable.value='age'
+	
+	document.body.appendChild(inputVariable) 
+	paragraphe = document.createElement('p')
+	paragraphe.setAttribute('id','paragraphe1')
+	texte = document.createTextNode('Bonjour.')
+	paragraphe.appendChild(texte)
+	document.body.appendChild(paragraphe)
+	
+function afficheNom(){
+	var nom=document.getElementById('inputNom').value
+	paragraphe=document.getElementById('paragraphe1')
+	paragraphe.removeChild( paragraphe.firstChild )
+	
+	texte = document.createTextNode('Bonjour '+nom+'.')
+	paragraphe.appendChild(texte)
+	}
+	
+function afficheAge(){
+	var nom=document.getElementById('inputNom').value
+	var age=parseInt(document.getElementById('inputAge').value)
+	paragraphe=document.getElementById('paragraphe1')
+	paragraphe.removeChild( paragraphe.firstChild )
+	
+	if (age>=18){texte = document.createTextNode(nom+', vous pouvez conduire une voiture en 2016.')}
+	else{texte = document.createTextNode(nom+', vous ne pouvez pas conduire une voiture en 2016.')}
+	paragraphe.appendChild(texte)
+	}
+
+</script>
+
+</body>
+</html>

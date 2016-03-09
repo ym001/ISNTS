@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<script language="JavaScript">
+	inputVariable = document.createElement('input')
+	inputVariable.setAttribute('id','input1')
+	inputVariable.setAttribute('onchange','affiche()')
+	inputVariable.value='a'
+	document.body.appendChild(inputVariable) 
+	paragraphe = document.createElement('p')
+	paragraphe.setAttribute('id','paragraphe1')
+	texte = document.createTextNode('Calcul des carrés.')
+	paragraphe.appendChild(texte)
+	document.body.appendChild(paragraphe)
+	
+function affiche(){
+	var nombre=parseFloat(document.getElementById('input1').value)
+	paragraphe=document.getElementById('paragraphe1')
+	paragraphe.removeChild( paragraphe.firstChild )
+	var str=''
+	for(var x=nombre;x<nombre+10;x=x+2){
+		var carre=x*x
+		str+='('+x+')^2 = '+carre+' ; '
+		}
+		
+	texte = document.createTextNode(str)
+	paragraphe.appendChild(texte)
+	}
+
+</script>
+
+</body>
+</html>

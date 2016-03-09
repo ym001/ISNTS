@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<script language="JavaScript">
+var mois=['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet','août','septembre','octobre','novembre','décembre']
+var duree=['31', '28', '31', '30', '31', '30', '31','31','30','31','30','31']
+var semaine=['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche']
+var str=''
+var c=0
+for(var i=0;i<mois.length;i++){
+	for(var j=1;j<=duree[i];j++){
+		var indiceDuJourDelaSemaine=c%7
+		str+=semaine[indiceDuJourDelaSemaine]+' '+j+' '+mois[i]+' ; '
+		c++
+		}
+	}
+paragraphe = document.createElement('p')
+document.body.appendChild(paragraphe) 
+texte = document.createTextNode(str)
+paragraphe.appendChild(texte) 
+</script>
+
+</body>
+</html>
